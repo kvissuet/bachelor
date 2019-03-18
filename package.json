@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "server": "nodemon server.js",
+    "start": "node start.js",
+    "server": "nodemon start.js",
     "client-install": "npm install --prefix client ",
-    "client" : "npm start --prefix client",
-    "dev" : "concurrently \"npm run server\" \"npm run client\""
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
@@ -22,9 +22,12 @@
     "jsonwebtoken": "^8.5.0",
     "mongoose": "^5.4.19",
     "passport-jwt": "^4.0.0",
+    "simpl-schema": "^1.5.5",
     "validator": "^10.11.0"
   },
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "nodemon": "^1.18.10"
   }
 }

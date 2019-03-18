@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 const { GraphQLServer } = require('graphql-yoga')
 // 1
 const typeDefs = `
@@ -75,6 +76,12 @@ const resolvers = {
   }
 }
 // 3
+const db = require('./config/keys').mongodb;
+console.log(db)
+mongoose
+  .connect(db)
+  .then(() => console.log("Mongodb connected"))
+  .catch(err => console.log(err));
 const server = new GraphQLServer({
   typeDefs,
   resolvers,
